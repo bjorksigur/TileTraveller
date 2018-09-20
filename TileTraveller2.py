@@ -1,7 +1,12 @@
-location = 1.1
+# Það var mun auðveldara að vinna þennan kóða en fyrri. Vegna þess að það þurfti bara að setja það sem gert var í fyrri kóðanum inní föll. 
+# Þessi kóði er mun læsilegri. Hann er bæði skipulagaðri og styttri. Hinn virðist alltof flókinn þegar horft er á hann. 
+# Var ekki að lenda í því að gera klaufavillur í þessum kóða eins og í hinum. 
 
-def north(location):
-    print("You can travel: (N)orth.") 
+
+
+
+def north(location):                      #Reitur sem ferðast aðeins norður. 
+    print("You can travel: (N)orth.")     
     direction=(input("Direction: ")) 
     while direction.lower() != "n":
         print("Not a valid direction!") 
@@ -10,7 +15,7 @@ def north(location):
         location = round(location+0.1 ,2) 
     return(location)
 
-def north_east_south(location):
+def north_east_south(location):            #Reitur þar sem aðeins er hægt að ferðast norður, austur og suður. 
     print("You can travel: (N)orth or (E)ast or (S)outh.")    
     direction=(input("Direction: "))
     while direction.lower() != "n" and direction.lower() != "e" and direction.lower() != "s":
@@ -73,25 +78,29 @@ def north_south(location):
     return(location)
 
 
-
+location = 1.1           #first location 
 
 while location != 3.1:
     if location == 1.1:
-        new_location=north(location)
+        location=north(location)
     if location == 2.1:
-        new_location=north(location)
+        location=north(location)
     if location == 1.2:
-        new_location=north_east_south(location)
+        location=north_east_south(location)
     if location == 2.2:
-        new_location=south_west(location)
+        location=south_west(location)
     if location == 3.3:
-        new_location=south_west(location)
+        location=south_west(location)
     if location == 1.3:
-        new_location=east_south(location)
+        location=east_south(location)
     if location == 2.3:
-        new_location=east_west(location)
+        location=east_west(location)
     if location == 3.2: 
-        new_location=north_south(location)
+        location=north_south(location)
+else:
+    print("Victory!") 
+
+
 
     
 
